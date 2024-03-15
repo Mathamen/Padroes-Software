@@ -5,10 +5,11 @@ import milkshakes.Chocolate;
 import milkshakes.Milkshake;
 import milkshakes.Morango;
 import toppings.*;
-
 import java.util.Scanner;
 
 public class Atendente {
+    // Esta classe poderia se beneficiar de um HashMap tanto para os sabores quanto para os toppings
+    // Além disso, poderia também mesclar outros padrões de software.
     private static Scanner s= new Scanner(System.in);
 
     public Milkshake escolherSabor() {
@@ -32,7 +33,8 @@ public class Atendente {
         boolean b= true;
         int resposta=0;
         while(b){
-            System.out.println("Você vai querer algum topping? 0 se não quiser, 1 para biscoito, 2 para chantilly, 3 para gotas de chocolate, 4 para MM e 5 para paçoca");
+            System.out.println("Você vai querer algum topping? 0 se não quiser, 1 para biscoito, 2 para chantilly, " +
+                    "3 para gotas de chocolate, 4 para MM e 5 para paçoca");
             try{
                 resposta= s.nextInt();
 
@@ -45,28 +47,23 @@ public class Atendente {
                     break;
 
                 case 1:
-                    Milkshake ms2= new Biscoito(ms);
-                    ms= ms2;
+                    ms= new Biscoito(ms);
                     break;
 
                 case 2:
-                    Milkshake ms3= new Chantilly(ms);
-                    ms = ms3;
+                    ms = new Chantilly(ms);
                     break;
 
                 case 3:
-                    Milkshake ms4= new Gotas(ms);
-                    ms=ms4;
+                    ms= new Gotas(ms);
                     break;
 
                 case 4:
-                    Milkshake ms5= new MM(ms);
-                    ms=ms5;
+                    ms= new MM(ms);
                     break;
 
                 case 5:
-                    Milkshake ms6= new Pacoca(ms);
-                    ms=ms6;
+                    ms= new Pacoca(ms);
                     break;
             }
 
