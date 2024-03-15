@@ -5,6 +5,6 @@ public class Morango extends Milkshake{
     @Override
     public void monta(float preco) {
         System.out.println("Preço total= " + (this.preco + preco));
-        System.out.println("Montando um milkshake de chocolate");
+        System.out.println("Montando um milkshake de morango");
     }
 }
