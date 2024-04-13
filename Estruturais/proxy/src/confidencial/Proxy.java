@@ -1,6 +1,5 @@
 package confidencial;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 public class Proxy implements ServicoConfidencial{

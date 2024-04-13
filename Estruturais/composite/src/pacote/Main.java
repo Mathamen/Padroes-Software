@@ -1,12 +1,10 @@
 package pacote;
 
 // Importando as classes TarefaSimples e TarefaComposta
-import pacote.TarefaSimples;
-import pacote.TarefaComposta;
 
 public class Main {
     public static void main(String[] args) {
-        // Criando tarefas
+        // Criando tarefas normais
         TarefaSimples tarefa1 = new TarefaSimples();
         TarefaSimples tarefa2 = new TarefaSimples();
         TarefaSimples tarefa3 = new TarefaSimples();
@@ -20,13 +18,13 @@ public class Main {
         TarefaSimples tarefa11 = new TarefaSimples();
         TarefaSimples tarefa12 = new TarefaSimples();
 
-        // Criando tarefas compostas
+        // Criando tarefas compostas, que podem ter filhos
         TarefaComposta tarefaPrincipal1 = new TarefaComposta();
         TarefaComposta tarefaPrincipal2 = new TarefaComposta();
         TarefaComposta tarefaPrincipal3 = new TarefaComposta();
         TarefaComposta tarefaPrincipal4 = new TarefaComposta();
 
-        // Adicionando subtarefas às tarefas compostas
+        // Adicionando as tarefas normais nas compostas
         tarefaPrincipal1.adicionarSubtarefa(tarefa1);
         tarefaPrincipal1.adicionarSubtarefa(tarefa2);
         tarefaPrincipal1.adicionarSubtarefa(tarefa3);
@@ -46,12 +44,14 @@ public class Main {
         tarefaPrincipal4.adicionarSubtarefa(tarefa11);
         tarefaPrincipal4.adicionarSubtarefa(tarefa12);
 
-        // Testando as operações
+        // Testes daqui para baixo
         tarefa1.concluir();
         tarefa2.concluir();
         tarefa3.concluir();
-        tarefaPrincipal1.concluir(); // Deve concluir todas as subtarefas
 
+        System.out.println("Tarefa principal 1 concluída? " + tarefaPrincipal1.estaConcluida()); // Deve imprimir false
+
+        tarefaPrincipal1.concluir(); // Deve concluir todas as subtarefas
         System.out.println("Tarefa principal 1 concluída? " + tarefaPrincipal1.estaConcluida()); // Deve imprimir true
 
         tarefa3.desfazerConclusao();
