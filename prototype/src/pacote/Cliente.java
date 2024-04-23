@@ -31,8 +31,19 @@ public class Cliente {
       System.out.println("Digite a quantidade de inimigos pesados que quer enfrentar");
       int inputPesado = sc.nextInt();
 
+
+      /*
+      Nesta segunda etapa sõa criados os objetos com base no prototype.
+      Realmente, é muito simplificada a criação dos objetos.
+      Note como é só chamar um método para clonar sendo criado um objeto com os mesmos atributos.
+      Para criar em massa, basta criar apenas um loop com uma quantidade definida.
+      Com a possibilidade de criar um catálogo de objetos, como demonstrado, fica ainda mais fácil chamar para criar
+      ao longo do código, podendo ser unido a um padrão memento.
+
+       */
+
       for (int i = 0; i < inputLeve; i++) {
-            InimigoLeve inim= (InimigoLeve) catalogo.get(0).clonar();
+            InimigoLeve inim= (InimigoLeve) catalogo.get(0).clonar(); // poderia ser GetFirst(), mas coloquei só para demonstrar
             inim.atacar();
 
       }
